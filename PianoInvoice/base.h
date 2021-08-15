@@ -2,7 +2,7 @@
 #define BASE_H
 
 #include <QMainWindow>
-
+#include "emailwindow.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Base; }
 QT_END_NAMESPACE
@@ -17,5 +17,6 @@ public:
 
 private:
     Ui::Base *ui;
+    EmailWindow emailwindow;
 };
 #endif // BASE_H
