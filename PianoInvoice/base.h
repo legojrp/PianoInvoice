@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "emailwindow.h"
+#include "settings.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class Base; }
 QT_END_NAMESPACE
@@ -15,8 +16,12 @@ public:
     Base(QWidget *parent = nullptr);
     ~Base();
 
+private slots:
+    void on_Save_clicked();
+
 private:
     Ui::Base *ui;
     EmailWindow emailwindow;
+    Settings settings;
 };
 #endif // BASE_H

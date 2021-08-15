@@ -1,0 +1,10 @@
+debug/time.o
+debug/UserDataHandler.o
+debug/autosave.o
+debug/emailwindow.o
+debug/main.o
+debug/base.o
+debug/settings.o
+debug/moc_base.o
+debug/moc_emailwindow.o
+debug/moc_settings.o

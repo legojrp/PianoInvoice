@@ -9,19 +9,24 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ../../TimeCpp/time.cpp \
+    ../../UserDataHandledCpp/UserDataHandler.cpp \
     autosave.cpp \
     emailwindow.cpp \
     main.cpp \
-    base.cpp
+    base.cpp \
+    settings.cpp
 
 HEADERS += \
     autosave.h \
     base.h \
-    emailwindow.h
+    emailwindow.h \
+    settings.h
 
 FORMS += \
     base.ui \
-    emailwindow.ui
+    emailwindow.ui \
+    settings.ui
 
 #icon stuff
 

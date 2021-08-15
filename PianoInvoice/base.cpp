@@ -14,3 +14,11 @@ Base::~Base()
 }
 //emailwindow = New EmailWindow(this);
 //EmailWindow->show();
+//settings = New Settings(this);
+//Settings->show();
+
+void Base::on_Save_clicked()
+{
+    ui->AutoSave->setStyleSheet("background-color: rgb(00, 255, 00)");
+}
+

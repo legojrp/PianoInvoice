@@ -1,0 +1,10 @@
+release/time.o
+release/UserDataHandler.o
+release/autosave.o
+release/emailwindow.o
+release/main.o
+release/base.o
+release/settings.o
+release/moc_base.o
+release/moc_emailwindow.o
+release/moc_settings.o
