@@ -10,10 +10,12 @@
 #define UI_BASE_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
@@ -24,6 +26,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Base
 {
 public:
+    QAction *actionSomthing;
     QWidget *centralwidget;
     QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
@@ -31,6 +34,7 @@ public:
     QGroupBox *groupBox_2;
     QGroupBox *groupBox;
     QMenuBar *menubar;
+    QMenu *menuFile;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Base)
@@ -38,6 +42,8 @@ public:
         if (Base->objectName().isEmpty())
             Base->setObjectName(QString::fromUtf8("Base"));
         Base->resize(800, 600);
+        actionSomthing = new QAction(Base);
+        actionSomthing->setObjectName(QString::fromUtf8("actionSomthing"));
         centralwidget = new QWidget(Base);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout_2 = new QGridLayout(centralwidget);
@@ -78,10 +84,15 @@ public:
         menubar = new QMenuBar(Base);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 20));
+        menuFile = new QMenu(menubar);
+        menuFile->setObjectName(QString::fromUtf8("menuFile"));
         Base->setMenuBar(menubar);
         statusbar = new QStatusBar(Base);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         Base->setStatusBar(statusbar);
+
+        menubar->addAction(menuFile->menuAction());
+        menuFile->addAction(actionSomthing);
 
         retranslateUi(Base);
 
@@ -91,8 +102,10 @@ public:
     void retranslateUi(QMainWindow *Base)
     {
         Base->setWindowTitle(QCoreApplication::translate("Base", "Base", nullptr));
+        actionSomthing->setText(QCoreApplication::translate("Base", "Save", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("Base", "Student Data", nullptr));
         groupBox->setTitle(QCoreApplication::translate("Base", "Actions", nullptr));
+        menuFile->setTitle(QCoreApplication::translate("Base", "File", nullptr));
     } // retranslateUi
 
 };
