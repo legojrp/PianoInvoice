@@ -1,6 +1,7 @@
 debug/time.o
 debug/UserDataHandler.o
 debug/autosave.o
+debug/display.o
 debug/emailwindow.o
 debug/main.o
 debug/base.o

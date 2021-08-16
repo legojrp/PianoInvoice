@@ -6,6 +6,7 @@ Base::Base(QWidget *parent)
     , ui(new Ui::Base)
 {
     ui->setupUi(this);
+    ui->AutoSave->setStyleSheet("background-color: rgb(76, 255, 200)");
 }
 
 Base::~Base()
@@ -20,5 +21,30 @@ Base::~Base()
 void Base::on_Save_clicked()
 {
     ui->AutoSave->setStyleSheet("background-color: rgb(00, 255, 00)");
+}
+
+
+
+
+//ui->AutoSave->setStyleSheet("background-color: rgb(255, 00, 00)");
+
+   //autosave::s_autosave();
+
+void Base::on_tableWidget_cellChanged(int row, int column)
+{
+     //autosave::s_autosave();
+    ui->AutoSave->setStyleSheet("background-color: rgb(255, 00, 00)");
+}
+
+
+void Base::on_NewRow_clicked()
+{
+    ui->tableWidget->insertRow( ui->tableWidget->rowCount() );
+}
+
+
+void Base::on_NewColumn_clicked()
+{
+    ui->tableWidget->insertColumn( ui->tableWidget->columnCount() );
 }
 

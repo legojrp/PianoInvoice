@@ -12,6 +12,7 @@ SOURCES += \
     ../../TimeCpp/time.cpp \
     ../../UserDataHandledCpp/UserDataHandler.cpp \
     autosave.cpp \
+    display.cpp \
     emailwindow.cpp \
     main.cpp \
     base.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 HEADERS += \
     autosave.h \
     base.h \
+    display.h \
     emailwindow.h \
     settings.h
 
@@ -31,6 +33,9 @@ FORMS += \
 #icon stuff
 
 win32:RC_ICONS += icon.ico
+ # other stuff
+ ... = -Wno-unused-parameter
+ QMAKE_CXXFLAGS_WARN_OFF -= -Wunused-parameter
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

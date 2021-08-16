@@ -22,7 +22,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -44,7 +44,7 @@ public:
     QPushButton *Settings;
     QPushButton *NewRow;
     QLabel *AutoSave;
-    QTreeWidget *treeWidget;
+    QTableWidget *tableWidget;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuHelp;
@@ -128,19 +128,33 @@ public:
 
         horizontalLayout->addWidget(groupBox);
 
-        treeWidget = new QTreeWidget(centralwidget);
-        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(treeWidget);
-        __qtreewidgetitem->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsDropEnabled|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
-        treeWidget->setObjectName(QString::fromUtf8("treeWidget"));
-        QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Expanding);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(treeWidget->sizePolicy().hasHeightForWidth());
-        treeWidget->setSizePolicy(sizePolicy3);
-        treeWidget->setAutoFillBackground(true);
-        treeWidget->setAnimated(true);
+        tableWidget = new QTableWidget(centralwidget);
+        if (tableWidget->columnCount() < 9)
+            tableWidget->setColumnCount(9);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        tableWidget->setHorizontalHeaderItem(8, __qtablewidgetitem8);
+        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableWidget->setAlternatingRowColors(true);
+        tableWidget->setShowGrid(true);
+        tableWidget->setCornerButtonEnabled(true);
 
-        horizontalLayout->addWidget(treeWidget);
+        horizontalLayout->addWidget(tableWidget);
 
         Base->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Base);
@@ -179,22 +193,24 @@ public:
         Settings->setText(QCoreApplication::translate("Base", "Open Settings", nullptr));
         NewRow->setText(QCoreApplication::translate("Base", "New Row", nullptr));
         AutoSave->setText(QString());
-        QTreeWidgetItem *___qtreewidgetitem = treeWidget->headerItem();
-        ___qtreewidgetitem->setText(9, QCoreApplication::translate("Base", "Closing", nullptr));
-        ___qtreewidgetitem->setText(8, QCoreApplication::translate("Base", "Greeting", nullptr));
-        ___qtreewidgetitem->setText(7, QCoreApplication::translate("Base", "Next Recital", nullptr));
-        ___qtreewidgetitem->setText(6, QCoreApplication::translate("Base", "Grand Total", nullptr));
-        ___qtreewidgetitem->setText(5, QCoreApplication::translate("Base", "Music Ordered", nullptr));
-        ___qtreewidgetitem->setText(4, QCoreApplication::translate("Base", "Books Cost", nullptr));
-        ___qtreewidgetitem->setText(3, QCoreApplication::translate("Base", "Total Due", nullptr));
-        ___qtreewidgetitem->setText(2, QCoreApplication::translate("Base", "Lessons Expected", nullptr));
-        ___qtreewidgetitem->setText(1, QCoreApplication::translate("Base", "Email ", nullptr));
-        ___qtreewidgetitem->setText(0, QCoreApplication::translate("Base", "Student Name", nullptr));
-
-        const bool __sortingEnabled = treeWidget->isSortingEnabled();
-        treeWidget->setSortingEnabled(false);
-        treeWidget->setSortingEnabled(__sortingEnabled);
-
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("Base", "Student Name", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("Base", "Email", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("Base", "no. of lessons", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("Base", "price", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("Base", "total due", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("Base", "books cost", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("Base", "music ordered", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("Base", "greeting", nullptr));
+        QTableWidgetItem *___qtablewidgetitem8 = tableWidget->horizontalHeaderItem(8);
+        ___qtablewidgetitem8->setText(QCoreApplication::translate("Base", "closing", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Base", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("Base", "Help", nullptr));
     } // retranslateUi

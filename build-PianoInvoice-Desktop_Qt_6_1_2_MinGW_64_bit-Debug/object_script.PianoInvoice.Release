@@ -1,6 +1,7 @@
 release/time.o
 release/UserDataHandler.o
 release/autosave.o
+release/display.o
 release/emailwindow.o
 release/main.o
 release/base.o

@@ -114,17 +114,14 @@
      </widget>
     </item>
     <item>
-     <widget class="QTreeWidget" name="treeWidget">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="autoFillBackground">
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="alternatingRowColors">
        <bool>true</bool>
       </property>
-      <property name="animated">
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="cornerButtonEnabled">
        <bool>true</bool>
       </property>
       <column>
@@ -134,57 +131,44 @@
       </column>
       <column>
        <property name="text">
-        <string>Email </string>
+        <string>Email</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Lessons Expected</string>
+        <string>no. of lessons</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Total Due</string>
+        <string>price</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Books Cost</string>
+        <string>total due</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Music Ordered</string>
+        <string>books cost</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Grand Total</string>
+        <string>music ordered</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Next Recital</string>
+        <string>greeting</string>
        </property>
       </column>
       <column>
        <property name="text">
-        <string>Greeting</string>
+        <string>closing</string>
        </property>
       </column>
-      <column>
-       <property name="text">
-        <string>Closing</string>
-       </property>
-      </column>
-      <item>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="flags">
-        <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-       </property>
-      </item>
      </widget>
     </item>
    </layout>
